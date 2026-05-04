@@ -1,0 +1,199 @@
+/* estilo.css */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #15151e;
+    color: white;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.countdown-box {
+    background: #1f1f27;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-left: 5px solid #e10600;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.timer span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 5px;
+    color: #e10600;
+}
+
+.proximo-alerta {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+
+.menu-etapas {
+    background-color: #15151e; /* Tom oficial F1 */
+    padding: 10px 0;
+    border-bottom: 2px solid #e10600;
+}
+
+.scroll-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 15px;
+    gap: 20px;
+    scrollbar-width: thin; /* Para Firefox */
+}
+
+/* Estilo da barra de rolagem para Chrome/Edge */
+.scroll-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #e10600;
+    border-radius: 10px;
+}
+
+.menu-etapas a {
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.menu-etapas a:hover {
+    color: #e10600;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: clamp(1.8rem, 8vw, 2.5rem); /* Fonte diminui em telas menores */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu-f1 {
+    background-color: #e10600;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: sticky; /* O menu gruda no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-f1 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Essencial para smartphones */
+    gap: 15px;
+}
+
+.menu-f1 a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 8px 4px;
+    transition: 0.3s;
+}
+
+/* Tabela de Classificação */
+.standings-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #15151e;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+tr:nth-child(even) { background-color: #f9f9f9; }
+tr:hover { background-color: #f1f1f1; }
+
+.pos { font-weight: bold; width: 50px; }
+.pts { font-weight: bold; text-align: right; color: #e10600; }
+
+@media (max-width: 480px) {
+    th:nth-child(3), td:nth-child(3) { display: none; } /* Esconde equipe no celular */
+}
+
+
+/* Ajustes específicos para Celulares (telas menores que 600px) */
+@media (max-width: 600px) {
+    .menu-f1 ul {
+        gap: 10px; /* Diminui o espaço entre links */
+    }
+
+    .menu-f1 a {
+        font-size: 11px; /* Letra menor no celular */
+        padding: 10px 5px; /* Área de toque maior */
+    }
+}
+
+.rodape-site {
+    background-color: #15151e; /* Preto padrão F1 */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 3px solid #e10600; /* Linha vermelha detalhe F1 */
+    font-family: sans-serif;
+}
+
+.rodape-conteudo p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.redes-sociais a {
+    color: #e10600;
+    text-decoration: none;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+.redes-sociais a:hover {
+    text-decoration: underline;
+}

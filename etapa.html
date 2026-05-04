@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 2026 - Detalhes da Etapa</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+<header>
+    <h1>F1 2026</h1>
+</header>
+
+<nav class="menu-etapas">
+    <div class="scroll-container">
+        <a href="index.html">Home</a>
+        <!-- Os links agora passam o nome do GP como parâmetro -->
+        <a href="etapa.html?gp=Austrália">Austrália</a>
+        <a href="etapa.html?gp=China">China</a>
+        <a href="etapa.html?gp=Japão">Japão</a>
+        <a href="etapa.html?gp=Miami">Miami</a>
+        <a href="etapa.html?gp=Canadá">Canadá</a>
+    </div>
+</nav>
+
+<div class="standings-container">
+    <div class="header-gp">
+        <h2 id="titulo-gp" style="text-align: center;">Carregando...</h2>
+    </div>
+
+    <table id="tabela-pilotos">
+        <thead>
+            <tr>
+                <th>Pos</th>
+                <th>Piloto</th>
+                <th>Equipe</th>
+                <th style="text-align: right;">PTS</th>
+            </tr>
+        </thead>
+        <tbody id="corpo-tabela-dinamico">
+            <!-- Dados inseridos via JS -->
+        </tbody>
+    </table>
+</div>
+
+<script src="js/dados-corridas.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const nomeGP = params.get('gp');
+    
+    const titulo = document.getElementById("titulo-gp");
+    const corpoTabela = document.getElementById("corpo-tabela-dinamico");
+
+    if (!nomeGP) {
+        titulo.innerText = "Etapa não especificada";
+        return;
+    }
+
+    const dadosGP = resultados2026.find(r => r.gp === nomeGP);
+
+    if (dadosGP) {
+        titulo.innerText = `GP de ${nomeGP}`;
+        
+        // --- LÓGICA DE STATUS DA ETAPA ---
+        const dataCorrida = new Date(dadosGP.data);
+        const agora = new Date();
+        
+        // Criar um elemento para o aviso de status
+        const statusAviso = document.createElement("div");
+        statusAviso.style.textAlign = "center";
+        statusAviso.style.marginBottom = "20px";
+        statusAviso.style.padding = "10px";
+        statusAviso.style.borderRadius = "5px";
+        statusAviso.style.fontWeight = "bold";
+
+        if (agora > dataCorrida) {
+            statusAviso.innerText = "✓ Esta etapa já foi realizada";
+            statusAviso.style.backgroundColor = "#d4edda"; // Verde claro
+            statusAviso.style.color = "#155724";
+        } else {
+            statusAviso.innerText = "⌛ Esta etapa ainda não aconteceu";
+            statusAviso.style.backgroundColor = "#fff3cd"; // Amarelo claro
+            statusAviso.style.color = "#856404";
+        }
+        
+        // Insere o aviso logo abaixo do título
+        titulo.parentNode.insertBefore(statusAviso, titulo.nextSibling);
+        // ---------------------------------
+
+        const resultadosFinais = dadosGP.resultados.map(res => {
+            const infoPiloto = dbPilotos[res.id];
+            const pontosSprint = dadosGP.sprint?.find(s => s.id === res.id)?.pontos || 0;
+            
+            return {
+                nome: infoPiloto ? infoPiloto.nome : "Piloto Desconhecido",
+                equipe: infoPiloto ? infoPiloto.equipe : "---",
+                total: res.pontos + pontosSprint,
+                temSprint: pontosSprint > 0
+            };
+        });
+
+        resultadosFinais.sort((a, b) => b.total - a.total);
+
+        corpoTabela.innerHTML = resultadosFinais.map((res, index) => `
+            <tr>
+                <td>${index + 1}º</td>
+                <td><strong>${res.nome}</strong></td>
+                <td>${res.equipe}</td>
+                <td style="text-align: right; font-weight: bold;">
+                    ${res.total}
+                    ${res.temSprint ? `<small style="display:block; font-size:10px; color:gray;">(Inclui Sprint)</small>` : ''}
+                </td>
+            </tr>
+        `).join('');
+    } else {
+        titulo.innerText = "Dados não encontrados";
+        corpoTabela.innerHTML = `<tr><td colspan="4" style="text-align:center">Resultados ainda não cadastrados.</td></tr>`;
+    }
+});
+
+</script>
+
+
+</body>
+</html>
