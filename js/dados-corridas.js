@@ -210,12 +210,23 @@ const resultados2026 = [
     
     {
         gp: "Canadá",
-        data: "2026-05-22T13:30:00",
+        data: "2026-05-24T17:00:00",
         temSprint: true,
         sprint: [
             { id: 0, pontos: 0 },
             
         ],
+        resultados: [
+            { id: 0, posicao: 0, pontos: 0 },
+            
+        ]
+    }, 
+    
+     {
+        gp: "Mônaco",
+        data: "2026-06-07T10:00:00",
+        temSprint: false,
+       
         resultados: [
             { id: 0, posicao: 0, pontos: 0 },
             
