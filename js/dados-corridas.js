@@ -213,11 +213,54 @@ const resultados2026 = [
         data: "2026-05-24T17:00:00",
         temSprint: true,
         sprint: [
-            { id: 0, pontos: 0 },
+            { id: 63, posicao: 1, pontos: 8 },
+            { id: 1,  posicao: 2, pontos: 7 },
+            { id: 12, posicao: 3, pontos: 6 },
+            { id: 81, posicao: 4, pontos: 5},
+            { id: 16, posicao: 5, pontos: 4},
+            { id: 44, posicao: 6, pontos: 3},
+            { id: 3,  posicao: 7, pontos: 2},
+            { id: 41, posicao: 8, pontos: 1},
+            { id: 43, posicao: 9, pontos: 0},
+            { id: 55, posicao: 10, pontos: 0},
+            { id: 30, posicao: 11, pontos: 0},
+            { id: 5,  posicao: 12, pontos: 0},
+            { id: 31, posicao: 13, pontos: 0},
+            { id: 11, posicao: 14, pontos: 0},
+            { id: 27, posicao: 15, pontos: 0},
+            { id: 18, posicao: 16, pontos: 0},
+            { id: 77, posicao: 17, pontos: 0},
+            { id: 87, posicao: 18, pontos: 0},
+            { id: 23, posicao: 19, pontos: 0},
+            { id: 10, posicao: 20, pontos: 0},
+            { id: 6,  posicao: 21, pontos: 0},
+            { id: 14, posicao: 22, pontos: 0}
             
         ],
         resultados: [
-            { id: 0, posicao: 0, pontos: 0 },
+            { id: 12, posicao: 1,  pontos: 25 },
+            { id: 44, posicao: 2,  pontos: 18 },
+            { id: 3,  posicao: 3,  pontos: 15 },
+            { id: 16, posicao: 4,  pontos: 12 },
+            { id: 6,  posicao: 5,  pontos: 10 },
+            { id: 43, posicao: 6,  pontos: 8 },
+            { id: 30, posicao: 7,  pontos: 6 },
+            { id: 10, posicao: 8,  pontos: 4 },
+            { id: 55, posicao: 9,  pontos: 2 },
+            { id: 87, posicao: 10, pontos: 1 },
+            { id: 81, posicao: 11, pontos: 0 },
+            { id: 27, posicao: 12, pontos: 0 },
+            { id: 5,  posicao: 13, pontos: 0 },
+            { id: 31, posicao: 14, pontos: 0 },
+            { id: 18, posicao: 15, pontos: 0 },
+            { id: 77, posicao: 16, pontos: 0 },
+            { id: 11, posicao: 17, pontos: 0 },
+            { id: 1,  posicao: 18, pontos: 0 },
+            { id: 63, posicao: 19, pontos: 0 },
+            { id: 14, posicao: 20, pontos: 0 },
+            { id: 23, posicao: 21, pontos: 0 },
+            { id: 41, posicao: 22, pontos: 0 }
+
             
         ]
     }, 
@@ -228,7 +271,16 @@ const resultados2026 = [
         temSprint: false,
        
         resultados: [
-            { id: 0, posicao: 0, pontos: 0 },
+           
+        ]
+    },
+
+    {
+        gp: "Barcelona",
+        data: "2026-06-14T10:00:00",
+        temSprint: false,
+       
+        resultados: [
             
         ]
     } 
