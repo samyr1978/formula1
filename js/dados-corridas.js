@@ -333,9 +333,43 @@ const resultados2026 = [
         temSprint: false,
        
         resultados: [
+             { id: 63, posicao: 1, pontos: 25 },
+            { id: 3, posicao: 2, pontos: 18 },
+            { id: 12, posicao: 3, pontos: 15 },
+            { id: 81, posicao: 4, pontos: 12},
+            { id: 44,  posicao: 5, pontos: 10},
+            { id: 6, posicao: 6, pontos: 8},
+            { id: 1, posicao: 7, pontos: 6},
+            { id: 16,  posicao: 8, pontos: 4},
+            { id: 30, posicao: 9, pontos: 2},
+            { id: 41, posicao: 10, pontos: 1},
+            { id: 5, posicao: 11, pontos: 0},
+            { id: 27,  posicao: 12, pontos: 0},
+            { id: 10,  posicao: 13, pontos: 0},
+            { id: 87, posicao: 14, pontos: 0},
+            { id: 43, posicao: 15, pontos: 0},
+            { id: 31, posicao: 16, pontos: 0},
+            { id: 23, posicao: 17, pontos: 0},
+            { id: 14, posicao: 18, pontos: 0},
+            { id: 18, posicao: 19, pontos: 0},
+            { id: 55, posicao: 20, pontos: 0},
+            { id: 11, posicao: 21, pontos: 0},
+            { id: 77, posicao: 22, pontos: 0}
+        ]
+    },
+    
+    {
+    gp: "Inglaterra",
+        data: "2026-07-05T11:00:00",
+        temSprint: true,
+        sprint: [
+            
+        ],
+        resultados: [
+            
             
         ]
-    } 
+    }
 ];
 document.addEventListener("DOMContentLoaded", () => {
     const corpoPilotos = document.getElementById("corpo-tabela");
